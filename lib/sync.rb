@@ -22,4 +22,7 @@ module Sync
   end
 
   # Include Services Here
+  Dir.glob(File.join(lib_path, 'services/**/*.rb')).each do |service_file|
+    require_dependency(service_file)
+  end
 end

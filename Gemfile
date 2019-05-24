@@ -8,6 +8,8 @@ gem 'standalone_migrations'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 
 group :development do
+  gem 'pry', '~> 0.12.2'
+  gem 'pry-byebug'
   gem 'rubocop', require: false
 end
 
