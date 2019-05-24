@@ -10,7 +10,7 @@ end
 
 def db_config
   db_config_file = File.join(lib_path, 'db', 'config.yml')
-  YAML.safe_load(File.read(db_config_file))
+  YAML.safe_load(File.read(db_config_file), [], [], true)
 end
 
 ActiveRecord::Base.establish_connection(db_config[ENV['env'] || 'development'])

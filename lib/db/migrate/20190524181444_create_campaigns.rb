@@ -6,7 +6,7 @@ class CreateCampaigns < ActiveRecord::Migration[5.2]
       t.bigint :job_id
       t.integer :status, default: 0
       t.bigint :external_reference
-      t.text :ad_description
+      t.text :description
 
       t.timestamps
     end

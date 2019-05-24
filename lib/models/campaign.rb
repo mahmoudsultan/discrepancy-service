@@ -2,8 +2,8 @@
 
 module Sync
   class Campaign < Sync::ApplicationRecord
-    enum status: %i[active paused deleted]
+    enum status: %i[active paused disabled]
 
-    validates :job_id, :external_reference, :ad_description, presence: true
+    validates :job_id, :external_reference, :description, presence: true
   end
 end
