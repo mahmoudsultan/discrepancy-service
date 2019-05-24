@@ -1,0 +1,18 @@
+Metrics/LineLength:
+  Max: 120
+
+Style/Documentation:
+  Exclude: 
+    - '**/*'
+
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'lib/db/migrate/*'
+    - 'lib/db/seeds.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'lib/db/schema.rb'
+    - 'spec/**/*'
+
