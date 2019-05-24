@@ -87,5 +87,9 @@ module Sync
         Sync::Campaign.first.update(description: 'Description for campaign 11')
       end
     end
+
+    after do
+      Sync::Campaign.delete_all
+    end
   end
 end
