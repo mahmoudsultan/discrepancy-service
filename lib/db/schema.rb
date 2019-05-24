@@ -15,7 +15,7 @@
 ActiveRecord::Schema.define(version: 20_190_524_181_444) do
   create_table 'campaigns', options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8', force: :cascade do |t|
     t.bigint 'job_id'
-    t.integer 'status'
+    t.integer 'status', default: 0
     t.bigint 'external_reference'
     t.text 'ad_description'
     t.datetime 'created_at', null: false
