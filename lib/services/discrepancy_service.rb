@@ -5,11 +5,12 @@ require 'json'
 
 module Sync
   class DiscrepancyService
-    def initialize(external_server, model=Sync::Campaign, ignore=[], json_data_key='ads')
+    def initialize(external_server, model = Sync::Campaign, ignore = [], json_data_key = 'ads', key_mapping = {})
       @external_server = external_server
       @model = model
       @keys_to_ignore = ignore
       @json_data_key = json_data_key
+      @key_mapping = key_mapping
     end
 
     def execute
@@ -47,7 +48,7 @@ module Sync
     def record_discrepancies(external_record, local_record, keys_to_check)
       record_discrepancies_arr = []
       keys_to_check.each do |key|
-        if external_record[key] != local_record.send(key.to_sym)
+        if external_record[key] != local_record.send(@key_mapping[key.to_sym] || key.to_sym)
           record_discrepancies_arr << record_discrepancy_entry(external_record, local_record, key)
         end
       end
